@@ -35,7 +35,9 @@ public class UC06CadastrarLivroV2 {
 			{ "1111", "Introducao ao Teste de Software", "Delamaro", "valido" },
 			{ "", "Introducao ao Teste de Software", "Delamaro", "ISBN invalido" },
 			{ null, "", "Delamaro", "ISBN invalido" },
-			{ "1111", "", "Delamaro", "Titulo invalido" } 
+			{ "1111", "", "Delamaro", "Titulo invalido" },
+			{ "1111", "Introducao ao Teste de Software", "", "Autor invalido" },
+			{ "1111", "Introducao ao Teste de Software", null, "Autor invalido" }
 			
 		});
 	}
@@ -53,5 +55,7 @@ public class UC06CadastrarLivroV2 {
 		} catch (Exception e) {
 			assertTrue(resultadoEsperado.equals(e.getMessage()));
 		}
-	}
+	}	
+	
+	
 }
