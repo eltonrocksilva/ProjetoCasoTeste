@@ -9,6 +9,7 @@ import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
 
 public class Emprestimo {
+	private int emprestimoNumero;
 	private Livro livro;
 	private Usuario usuario;
 	private String dataEmprestimo;
@@ -24,6 +25,10 @@ public class Emprestimo {
 
 	public Usuario getUsuario() {
 		return usuario;
+	}
+	
+	public int getEmprestimoNumero() {
+		return emprestimoNumero;
 	}
 
 	public void setUsuario(Usuario usuario) {

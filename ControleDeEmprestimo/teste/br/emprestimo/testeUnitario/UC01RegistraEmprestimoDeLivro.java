@@ -8,6 +8,8 @@ import org.junit.Test;
 import br.emprestimo.modelo.Emprestimo;
 import br.emprestimo.modelo.Livro;
 import br.emprestimo.modelo.Usuario;
+import br.emprestimo.servico.Conexao;
+import br.emprestimo.servico.ConfiguraDB;
 import br.emprestimo.servico.ServicoEmprestimo;
 
 import org.joda.time.DateTime;
@@ -115,4 +117,23 @@ public class UC01RegistraEmprestimoDeLivro {
 			assertTrue(resultadoEsperado.equals(e.getMessage()));
 		}
 	}
+	@Test
+	public void CT11obtem_conexao_valida() {
+		//cenario
+		ConfiguraDB configuraDB;
+		Conexao conexao;
+		String url = "jdbc:mysql://mysql8.db4free.net:3306/bibliotecateste";
+		String driver = "com.mysql.jdbc.Driver";
+		String usuario = "alunosteste";
+		String senha = "12345678";
+		//acao
+		configuraDB = new ConfiguraDB(url, driver, usuario, senha);
+		conexao = new Conexao(configuraDB);
+		//verificacao
+		assertEquals("Communications link failure", conexao.getConexao());
+		
+				
+	}
+	
+	
 }
